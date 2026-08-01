@@ -8,7 +8,7 @@ import CursorGlow from "@/components/CursorGlow";
 import AiAssistantModal from "@/components/AiAssistantModal";
 import QuickViewModal from "@/components/QuickViewModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ShopProvider, useShop } from "@/lib/store";
+import { useShop } from "@/lib/store";
 import { PRODUCTS } from "@/lib/data";
 import { openWhatsAppEnquiry } from "@/lib/whatsapp";
 import { Heart, MessageCircle, ShieldCheck, CheckCircle2, Star, Zap, Sun } from "lucide-react";
@@ -302,9 +302,5 @@ function ProductDetailContent({ paramsPromise }: { paramsPromise: Promise<{ id: 
 }
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  return (
-    <ShopProvider>
-      <ProductDetailContent paramsPromise={params} />
-    </ShopProvider>
-  );
+  return <ProductDetailContent paramsPromise={params} />;
 }

@@ -8,18 +8,17 @@ import RoomVisualizer from "@/components/RoomVisualizer";
 import AiAssistantModal from "@/components/AiAssistantModal";
 import QuickViewModal from "@/components/QuickViewModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ShopProvider } from "@/lib/store";
 
 function RoomVisualizerContent() {
   return (
-    <div className="min-h-screen bg-[#070709] text-gray-200">
+    <div className="min-h-screen bg-ink text-beige transition-colors duration-500">
       <CursorGlow />
       <Header />
       <QuickViewModal />
       <AiAssistantModal />
       <WhatsAppButton />
 
-      <main className="pt-24 pb-12">
+      <main className="pt-24 pb-16">
         <RoomVisualizer />
       </main>
 
@@ -29,9 +28,5 @@ function RoomVisualizerContent() {
 }
 
 export default function RoomVisualizerPage() {
-  return (
-    <ShopProvider>
-      <RoomVisualizerContent />
-    </ShopProvider>
-  );
+  return <RoomVisualizerContent />;
 }

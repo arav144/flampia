@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useShop } from "@/lib/store";
 import FlampiaLogo from "./Logo";
-import { Sun, Moon, Sparkles, Heart, Menu, X } from "lucide-react";
+import { Sparkles, Heart, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { wishlist, setIsAiModalOpen, themeMode, toggleThemeMode } = useShop();
+  const { wishlist, setIsAiModalOpen } = useShop();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,14 +58,7 @@ export default function Header() {
           <span className="text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded-full font-mono">BETA</span>
         </button>
 
-        {/* Day/Night Theme mode toggle */}
-        <button
-          onClick={toggleThemeMode}
-          className="p-2.5 rounded-full border border-white/10 text-gray-300 hover:text-white hover:border-red-500 transition-all text-sm"
-          title={`Switch to ${themeMode === "dark" ? "Light" : "Dark"} Mode`}
-        >
-          {themeMode === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
-        </button>
+
 
         {/* Saved Wishlist Link */}
         <Link

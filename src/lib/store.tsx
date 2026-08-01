@@ -54,12 +54,10 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setMounted(true);
   }, []);
 
-  const themeMode: "dark" | "light" =
-    mounted && (resolvedTheme === "light" || theme === "light") ? "light" : "dark";
+  const themeMode: "dark" | "light" = "dark";
 
   const toggleThemeMode = () => {
-    const next = themeMode === "dark" ? "light" : "dark";
-    setTheme(next);
+    setTheme("dark");
   };
 
 

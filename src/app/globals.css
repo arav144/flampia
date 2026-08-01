@@ -76,6 +76,8 @@
   background-color: rgba(0, 0, 0, 0.04) !important;
 }
 
+.light .bg-black,
+.light-mode .bg-black,
 .light .bg-black\/40,
 .light-mode .bg-black\/40,
 .light .bg-black\/60,
@@ -748,7 +750,9 @@ footer.site-footer {
 
 .footer-top ul {
   list-style: none;
-  space-y: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .footer-top a {
@@ -763,7 +767,7 @@ footer.site-footer {
 }
 
 .footer-bottom {
-  border-t: 1px solid var(--line-glass);
+  border-top: 1px solid var(--line-glass);
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;

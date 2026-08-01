@@ -29,15 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-body">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           storageKey="flampia-theme"
-          disableTransitionOnChange={false}
-          themes={["light", "dark"]}
-          value={{
-            light: "light light-mode",
-            dark: "dark dark-mode",
-          }}
+          disableTransitionOnChange
         >
           <ShopProvider>{children}</ShopProvider>
         </ThemeProvider>
